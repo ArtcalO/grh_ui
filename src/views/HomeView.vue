@@ -1,10 +1,10 @@
 <template>
-  <h1>Formulaire conge {{propParent}}</h1>
+  <h1>Hello my HOME</h1>
 </template>
 
 <script>
 export default {
-    props:["propParent"]
+
 }
 </script>
 

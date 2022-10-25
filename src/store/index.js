@@ -4,6 +4,7 @@ const store = createStore({
     state(){
         return{
             user:"Bonjour Store",
+            conge:"Bonjour conge store"
         }
     }
 })
