@@ -9,7 +9,7 @@
               <th>Pods</th>
           </thead>
           <tbody>
-              <tr v-for="(niveau,i) in list_niveaux" :key="i">
+              <tr v-for="(niveau,i) in $store.state.list_niveau" :key="i">
                   <td>{{niveau.nom}}</td>
                   <td>{{niveau.poid}}</td>
               </tr>
@@ -25,7 +25,6 @@ import AjouterNiveau from '@/components/AjouterNiveau.vue';
     data(){
         return{
             modal_niveau:false,
-            list_niveaux:[]
         }
     },
     mounted(){
@@ -42,7 +41,7 @@ import AjouterNiveau from '@/components/AjouterNiveau.vue';
         fetchNiveau(){
             axios.get("http://127.0.0.1:8000/api/niveau/")
             .then((response)=>{
-                this.list_niveaux=response.data.results
+                this.$store.state.list_niveau=response.data.results
             }).catch((error)=>{
                 console.log(error)
             })
